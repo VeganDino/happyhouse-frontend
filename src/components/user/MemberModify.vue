@@ -11,7 +11,7 @@
         <b-jumbotron>
           <template #header>My Page</template>
 
-          <template #lead> 내 정보 확인페이지입니다. </template>
+          <template #lead> 내 정보 수정 페이지 입니다. </template>
 
           <hr class="my-4" />
 
@@ -47,9 +47,7 @@
           </b-container>
           <hr class="my-4" />
 
-          <b-button @click="modify" variant="primary" href="#" class="mr-1"
-            >정보수정</b-button
-          >
+          <b-button variant="primary" href="#" class="mr-1">정보수정</b-button>
           <b-button variant="danger" href="#">회원탈퇴</b-button>
         </b-jumbotron>
       </b-col>
@@ -65,17 +63,9 @@ const memberStore = "memberStore";
 
 export default {
   name: "MemberMyPage",
-  data() {
-    return {
-      user: {},
-    };
-  },
   components: {},
   computed: {
     ...mapState(memberStore, ["userInfo"]),
-  },
-  modify() {
-    this.$router.push({ name: "modify" });
   },
 };
 </script>
